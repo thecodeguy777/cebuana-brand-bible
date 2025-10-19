@@ -1,0 +1,103 @@
+@import "tailwindcss";
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap');
+@plugin "daisyui";
+
+/* Custom Typography Styles */
+.heading-1 { font-size: 65px; line-height: 1.1; font-weight: 700; }
+.heading-2 { font-size: 50px; line-height: 1.2; font-weight: 700; }
+.heading-3 { font-size: 45px; line-height: 1.2; font-weight: 600; }
+.heading-4 { font-size: 32px; line-height: 1.3; font-weight: 600; }
+.heading-5 { font-size: 24px; line-height: 1.4; font-weight: 600; }
+.heading-6 { font-size: 20px; line-height: 1.4; font-weight: 600; }
+
+.body-large { font-size: 16px; line-height: 1.6; font-weight: 400; }
+.body-regular { font-size: 14px; line-height: 1.6; font-weight: 400; }
+.body-small { font-size: 12px; line-height: 1.5; font-weight: 400; }
+.caption { font-size: 10px; line-height: 1.4; font-weight: 400; }
+
+/* Cebuana Brand Color Overrides */
+.bg-primary { background-color: #003366 !important; }
+.bg-secondary { background-color: #0C3558 !important; }
+.bg-accent { background-color: #E94B35 !important; }
+.bg-neutral { background-color: #3D4451 !important; }
+
+/* Button Primary */
+.btn-primary {
+  --btn-color: #003366 !important;
+  background-color: #003366 !important;
+  border-color: #002244 !important;
+  color: white !important;
+}
+.btn-primary:hover {
+  background-color: #002244 !important;
+  border-color: #001a33 !important;
+}
+.btn-primary:active,
+.btn-primary.btn-active {
+  background-color: #003366 !important;
+  border-color: #002244 !important;
+}
+input[type="radio"].btn-primary:checked,
+input[type="checkbox"].btn-primary:checked {
+  background-color: #003366 !important;
+  border-color: #002244 !important;
+  color: white !important;
+}
+
+/* Button Secondary */
+.btn-secondary {
+  --btn-color: #0C3558 !important;
+  background-color: #0C3558 !important;
+  border-color: #082340 !important;
+  color: white !important;
+}
+.btn-secondary:hover {
+  background-color: #082340 !important;
+}
+.btn-secondary:active,
+.btn-secondary.btn-active {
+  background-color: #0C3558 !important;
+  border-color: #082340 !important;
+}
+
+/* Button Accent */
+.btn-accent {
+  --btn-color: #E94B35 !important;
+  background-color: #E94B35 !important;
+  border-color: #C43D2B !important;
+  color: white !important;
+}
+.btn-accent:hover {
+  background-color: #C43D2B !important;
+}
+.btn-accent:active,
+.btn-accent.btn-active {
+  background-color: #E94B35 !important;
+  border-color: #C43D2B !important;
+}
+
+/* Radio/Checkbox Button Checked States */
+.join input[type="radio"].btn:checked,
+.join input[type="checkbox"].btn:checked {
+  background-color: #003366 !important;
+  border-color: #002244 !important;
+  color: white !important;
+}
+
+/* Stepper Colors */
+.step-primary {
+  --step-color: #003366 !important;
+}
+.step-primary::before {
+  background-color: #003366 !important;
+  border-color: #003366 !important;
+  color: white !important;
+}
+.step-primary::after {
+  background-color: #003366 !important;
+}
+
+/* Alerts */
+.alert-success { background-color: #36D399 !important; }
+.alert-warning { background-color: #FBBD23 !important; }
+.alert-error { background-color: #F87272 !important; }
