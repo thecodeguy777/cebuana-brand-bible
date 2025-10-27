@@ -24,7 +24,7 @@
       <label for="sidebar-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
       <aside :class="['bg-base-200 min-h-full transition-all duration-300 ease-in-out', isCollapsed ? 'w-20' : 'w-80']">
         <!-- Logo / Header -->
-        <div class="sticky top-0 z-20 bg-base-200 bg-opacity-90 backdrop-blur py-6 px-6 shadow-sm">
+        <div class="sticky top-0 z-20 bg-base-200 bg-opacity-90 backdrop-blur py-6 px-6 shadow-sm header-accent" :style="{ '--scroll-progress': `${scrollProgress}%` }">
           <div class="flex items-center justify-between">
             <router-link v-if="!isCollapsed" to="/home" class="flex items-center gap-2">
               <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
@@ -42,7 +42,7 @@
             </router-link>
           </div>
           <!-- Toggle Button -->
-          <button @click="toggleSidebar" class="collapse-btn hidden lg:flex" :title="isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'">
+          <button @click="toggleSidebar" class="collapse-btn hidden lg:flex accent-hover" :title="isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'">
             <svg class="w-5 h-5 transition-transform duration-300" :class="{ 'rotate-180': isCollapsed }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"/>
             </svg>
@@ -199,7 +199,7 @@
 </template>
 
 <script setup>
-import { inject, ref } from 'vue'
+import { inject, ref, onMounted, onUnmounted } from 'vue'
 
 // Inject the openSearch function from parent (App.vue will provide it)
 const openSearch = inject('openSearch', () => {
@@ -219,6 +219,54 @@ const isCollapsed = ref(false)
 const toggleSidebar = () => {
   isCollapsed.value = !isCollapsed.value
 }
+
+// Scroll progress tracking
+const scrollProgress = ref(0)
+
+const updateScrollProgress = () => {
+  // Try to find the main content scrollable area
+  const drawerContent = document.querySelector('.drawer-content')
+
+  let scrollTop, scrollHeight, clientHeight
+
+  // Check if drawer-content has scroll
+  if (drawerContent && drawerContent.scrollHeight > drawerContent.clientHeight) {
+    scrollTop = drawerContent.scrollTop
+    scrollHeight = drawerContent.scrollHeight
+    clientHeight = drawerContent.clientHeight
+  } else {
+    // Fallback to window scroll
+    scrollTop = window.scrollY || document.documentElement.scrollTop
+    scrollHeight = document.documentElement.scrollHeight
+    clientHeight = window.innerHeight
+  }
+
+  const totalScrollable = scrollHeight - clientHeight
+  const progress = totalScrollable > 0 ? (scrollTop / totalScrollable) * 100 : 0
+  scrollProgress.value = Math.min(100, Math.max(0, progress))
+}
+
+onMounted(() => {
+  // Listen to both window and drawer-content scroll events
+  window.addEventListener('scroll', updateScrollProgress, { passive: true })
+
+  const drawerContent = document.querySelector('.drawer-content')
+  if (drawerContent) {
+    drawerContent.addEventListener('scroll', updateScrollProgress, { passive: true })
+  }
+
+  // Initial calculation
+  setTimeout(updateScrollProgress, 100)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', updateScrollProgress)
+
+  const drawerContent = document.querySelector('.drawer-content')
+  if (drawerContent) {
+    drawerContent.removeEventListener('scroll', updateScrollProgress)
+  }
+})
 </script>
 
 <style scoped>
@@ -228,6 +276,24 @@ const toggleSidebar = () => {
 aside {
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow-x: hidden;
+}
+
+/* Header Accent Border */
+.header-accent {
+  border-bottom: 2px solid rgba(233, 75, 53, 0.15);
+  position: relative;
+}
+
+.header-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: var(--scroll-progress, 0%);
+  height: 3px;
+  background: linear-gradient(90deg, #003366 0%, #0C3558 50%, #E94B35 100%);
+  transition: width 0.15s ease-out;
+  box-shadow: 0 0 10px rgba(0, 51, 102, 0.5);
 }
 
 /* Menu Items - Full Width */
@@ -256,7 +322,25 @@ span {
 /* Divider for collapsed state */
 .divider {
   height: 1px;
-  background: rgba(0, 51, 102, 0.1);
+  background: linear-gradient(90deg, #E94B35 0%, rgba(0, 51, 102, 0.1) 30%, transparent 100%);
+}
+
+/* Menu Titles with Accent */
+.menu :deep(.menu-title) {
+  position: relative;
+  padding-left: 8px;
+}
+
+.menu :deep(.menu-title)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 12px;
+  background: #E94B35;
+  border-radius: 2px;
 }
 
 /* Collapse Button */
@@ -277,12 +361,24 @@ span {
 }
 
 .collapse-btn:hover {
-  background: rgba(0, 51, 102, 0.15);
-  border-color: rgba(0, 51, 102, 0.2);
+  background: rgba(233, 75, 53, 0.1);
+  border-color: #E94B35;
+  color: #E94B35;
 }
 
 .collapse-btn svg {
   transition: transform 0.3s ease;
+}
+
+/* Active Navigation Items with Accent Color */
+.menu :deep(.active) {
+  background: linear-gradient(90deg, rgba(233, 75, 53, 0.1) 0%, transparent 100%);
+  border-left: 3px solid #E94B35;
+  color: #E94B35;
+}
+
+.menu :deep(.active):hover {
+  background: linear-gradient(90deg, rgba(233, 75, 53, 0.15) 0%, transparent 100%);
 }
 
 /* Search Trigger Button */
@@ -294,6 +390,7 @@ span {
   padding: 10px 14px;
   background: rgba(0, 51, 102, 0.05);
   border: 1px solid rgba(0, 51, 102, 0.1);
+  border-left: 2px solid transparent;
   border-radius: 8px;
   color: #3D4451;
   font-size: 14px;
@@ -304,6 +401,13 @@ span {
 .search-trigger:hover {
   background: rgba(0, 51, 102, 0.1);
   border-color: rgba(0, 51, 102, 0.2);
+  border-left-color: #E94B35;
+}
+
+.search-trigger:focus {
+  outline: none;
+  border-left-color: #E94B35;
+  box-shadow: 0 0 0 3px rgba(233, 75, 53, 0.1);
 }
 
 .search-kbd {
