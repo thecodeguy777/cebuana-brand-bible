@@ -149,7 +149,8 @@
               <div class="pin-pad-responsive" :style="{
                 gridTemplateColumns: `repeat(3, ${buttonSize}px)`,
                 gap: viewportWidth >= 1024 ? '20px' : '16px',
-                maxWidth: viewportWidth >= 1024 ? '340px' : '320px'
+                maxWidth: viewportWidth >= 1024 ? '340px' : '320px',
+                justifyContent: 'center'
               }">
                 <button
                   v-for="num in [1,2,3,4,5,6,7,8,9]"
@@ -641,10 +642,11 @@ const submitPin = () => {
 /* PIN Pad Grid */
 .pin-pad {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 72px);
   gap: 16px;
   max-width: 320px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 /* PIN Buttons */

@@ -161,12 +161,12 @@
               <!-- Form -->
               <fieldset class="fieldset">
                 <legend class="fieldset-legend">Employee ID</legend>
-                <input type="text" placeholder="Enter employee ID" class="input input-bordered" />
+                <input type="text" placeholder="Enter employee ID" class="input input-bordered w-full" />
               </fieldset>
 
               <fieldset class="fieldset">
                 <legend class="fieldset-legend">Password</legend>
-                <input type="password" placeholder="Enter password" class="input input-bordered" />
+                <input type="password" placeholder="Enter password" class="input input-bordered w-full" />
               </fieldset>
 
               <div class="form-control mt-2">
