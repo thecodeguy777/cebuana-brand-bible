@@ -1,5 +1,5 @@
 <template>
-  <div class="drawer lg:drawer-open">
+  <div class="drawer lg:drawer-open" :style="{ '--sidebar-width': isCollapsed ? '80px' : '320px' }">
     <input id="sidebar-drawer" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col">
       <!-- Navbar for mobile -->
@@ -24,8 +24,8 @@
       <label for="sidebar-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
       <aside :class="['bg-base-200 min-h-full transition-all duration-300 ease-in-out', isCollapsed ? 'w-20' : 'w-80']">
         <!-- Logo / Header -->
-        <div class="sticky top-0 z-20 bg-base-200 bg-opacity-90 backdrop-blur py-6 px-6 shadow-sm header-accent" :style="{ '--scroll-progress': `${scrollProgress}%` }">
-          <div class="flex items-center justify-between">
+        <div :class="['sticky top-0 z-20 bg-base-200 bg-opacity-90 backdrop-blur py-6 shadow-sm header-accent', isCollapsed ? 'px-3' : 'px-6']" :style="{ '--scroll-progress': `${scrollProgress}%` }">
+          <div :class="['flex items-center', isCollapsed ? 'justify-center' : 'justify-between']">
             <router-link v-if="!isCollapsed" to="/home" class="flex items-center gap-2">
               <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                 <span class="text-white font-bold text-xl">C</span>
@@ -35,15 +35,20 @@
                 <div class="text-xs text-base-content/60">Brand Bible</div>
               </div>
             </router-link>
-            <router-link v-else to="/home" class="flex items-center justify-center w-full">
+            <router-link v-else to="/home" class="flex items-center justify-center">
               <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                 <span class="text-white font-bold text-xl">C</span>
               </div>
             </router-link>
           </div>
           <!-- Toggle Button -->
-          <button @click="toggleSidebar" class="collapse-btn hidden lg:flex accent-hover" :title="isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'">
-            <svg class="w-5 h-5 transition-transform duration-300" :class="{ 'rotate-180': isCollapsed }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <button v-if="!isCollapsed" @click="toggleSidebar" class="collapse-btn hidden lg:flex accent-hover" :title="'Collapse sidebar'">
+            <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"/>
+            </svg>
+          </button>
+          <button v-else @click="toggleSidebar" class="collapse-btn-collapsed hidden lg:flex accent-hover" :title="'Expand sidebar'">
+            <svg class="w-4 h-4 transition-transform duration-300 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"/>
             </svg>
           </button>
@@ -269,6 +274,35 @@ onUnmounted(() => {
 })
 </script>
 
+<style>
+/* Global styles for drawer behavior - must be unscoped */
+@media (min-width: 1024px) {
+  /* Remove DaisyUI's default fixed 320px margin */
+  .drawer.lg\:drawer-open > .drawer-content {
+    margin-left: 0 !important;
+  }
+
+  /* Add our dynamic padding based on sidebar width */
+  .drawer.lg\:drawer-open .drawer-content {
+    padding-left: var(--sidebar-width, 320px) !important;
+    transition: padding-left 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  /* Make sidebar fixed position */
+  .drawer.lg\:drawer-open .drawer-side {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    z-index: 10 !important;
+  }
+
+  .drawer.lg\:drawer-open .drawer-side > aside {
+    position: relative !important;
+  }
+}
+</style>
+
 <style scoped>
 /* Active link styling handled by DaisyUI's active class */
 
@@ -339,11 +373,11 @@ span {
   transform: translateY(-50%);
   width: 3px;
   height: 12px;
-  background: #E94B35;
+  background: linear-gradient(180deg, #003366 0%, #E94B35 100%);
   border-radius: 2px;
 }
 
-/* Collapse Button */
+/* Collapse Button - Expanded State */
 .collapse-btn {
   position: absolute;
   right: 8px;
@@ -361,8 +395,9 @@ span {
 }
 
 .collapse-btn:hover {
-  background: rgba(233, 75, 53, 0.1);
-  border-color: #E94B35;
+  background: linear-gradient(135deg, rgba(0, 51, 102, 0.1) 0%, rgba(233, 75, 53, 0.1) 100%);
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #003366 0%, #E94B35 100%) 1;
   color: #E94B35;
 }
 
@@ -370,15 +405,39 @@ span {
   transition: transform 0.3s ease;
 }
 
-/* Active Navigation Items with Accent Color */
-.menu :deep(.active) {
-  background: linear-gradient(90deg, rgba(233, 75, 53, 0.1) 0%, transparent 100%);
-  border-left: 3px solid #E94B35;
+/* Collapse Button - Collapsed State */
+.collapse-btn-collapsed {
+  width: 100%;
+  margin-top: 12px;
+  padding: 6px;
+  background: rgba(0, 51, 102, 0.05);
+  border: 1px solid rgba(0, 51, 102, 0.1);
+  border-radius: 6px;
+  color: #003366;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-items: center;
+  justify-content: center;
+}
+
+.collapse-btn-collapsed:hover {
+  background: linear-gradient(135deg, rgba(0, 51, 102, 0.1) 0%, rgba(233, 75, 53, 0.1) 100%);
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #003366 0%, #E94B35 100%) 1;
   color: #E94B35;
 }
 
+/* Active Navigation Items with Accent Color */
+.menu :deep(.active) {
+  background: linear-gradient(90deg, rgba(0, 51, 102, 0.05) 0%, rgba(233, 75, 53, 0.05) 100%);
+  border-left: 3px solid;
+  border-image: linear-gradient(180deg, #003366 0%, #E94B35 100%) 1;
+  color: #003366;
+}
+
 .menu :deep(.active):hover {
-  background: linear-gradient(90deg, rgba(233, 75, 53, 0.15) 0%, transparent 100%);
+  background: linear-gradient(90deg, rgba(0, 51, 102, 0.1) 0%, rgba(233, 75, 53, 0.1) 100%);
+  color: #E94B35;
 }
 
 /* Search Trigger Button */
@@ -390,7 +449,7 @@ span {
   padding: 10px 14px;
   background: rgba(0, 51, 102, 0.05);
   border: 1px solid rgba(0, 51, 102, 0.1);
-  border-left: 2px solid transparent;
+  border-left: 3px solid transparent;
   border-radius: 8px;
   color: #3D4451;
   font-size: 14px;
@@ -399,15 +458,19 @@ span {
 }
 
 .search-trigger:hover {
-  background: rgba(0, 51, 102, 0.1);
+  background: linear-gradient(90deg, rgba(0, 51, 102, 0.08) 0%, rgba(233, 75, 53, 0.05) 100%);
   border-color: rgba(0, 51, 102, 0.2);
-  border-left-color: #E94B35;
+  border-left-width: 3px;
+  border-left-style: solid;
+  border-image: linear-gradient(180deg, #003366 0%, #E94B35 100%) 1;
 }
 
 .search-trigger:focus {
   outline: none;
-  border-left-color: #E94B35;
-  box-shadow: 0 0 0 3px rgba(233, 75, 53, 0.1);
+  border-left-width: 3px;
+  border-left-style: solid;
+  border-image: linear-gradient(180deg, #003366 0%, #E94B35 100%) 1;
+  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
 }
 
 .search-kbd {
