@@ -36,6 +36,17 @@
           </router-link>
         </div>
 
+        <!-- Search Button -->
+        <div class="px-4 py-3">
+          <button @click="openSearch" class="search-trigger">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+            <span class="flex-1 text-left">Search...</span>
+            <kbd class="search-kbd">⌘K</kbd>
+          </button>
+        </div>
+
         <!-- Navigation Menu -->
         <ul class="menu p-4 space-y-1">
           <li>
@@ -156,20 +167,59 @@
           </li>
         </ul>
 
-        <!-- Footer -->
-        <div class="p-4 text-xs text-center text-base-content/50 border-t border-base-300 mt-4">
-          <p>Job Order #77</p>
-          <p class="mt-1">Product Management Department</p>
-        </div>
       </aside>
     </div>
   </div>
 </template>
 
 <script setup>
-//  DaisyUI sidebar navigation
+import { inject } from 'vue'
+
+// Inject the openSearch function from parent (App.vue will provide it)
+const openSearch = inject('openSearch', () => {
+  // Fallback: trigger Ctrl+K event if inject doesn't work
+  const event = new KeyboardEvent('keydown', {
+    key: 'k',
+    code: 'KeyK',
+    ctrlKey: true,
+    bubbles: true
+  })
+  window.dispatchEvent(event)
+})
 </script>
 
 <style scoped>
 /* Active link styling handled by DaisyUI's active class */
+
+/* Search Trigger Button */
+.search-trigger {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 14px;
+  background: rgba(0, 51, 102, 0.05);
+  border: 1px solid rgba(0, 51, 102, 0.1);
+  border-radius: 8px;
+  color: #3D4451;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-trigger:hover {
+  background: rgba(0, 51, 102, 0.1);
+  border-color: rgba(0, 51, 102, 0.2);
+}
+
+.search-kbd {
+  background: rgba(0, 51, 102, 0.1);
+  border: 1px solid rgba(0, 51, 102, 0.15);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-family: monospace;
+  color: #003366;
+  font-weight: 600;
+}
 </style>
