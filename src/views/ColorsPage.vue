@@ -13,7 +13,7 @@
       <template #preview>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div class="space-y-2">
-            <div class="h-24 rounded-lg shadow-lg" style="background-color: #003366;"></div>
+            <div class="w-24 h-24 rounded-full shadow-lg mx-auto" style="background-color: #003366;"></div>
             <div class="text-center">
               <p class="font-semibold">Primary</p>
               <p class="text-sm text-base-content/60">#003366</p>
@@ -21,7 +21,7 @@
             </div>
           </div>
           <div class="space-y-2">
-            <div class="h-24 rounded-lg shadow-lg" style="background-color: #0C3558;"></div>
+            <div class="w-24 h-24 rounded-full shadow-lg mx-auto" style="background-color: #0C3558;"></div>
             <div class="text-center">
               <p class="font-semibold">Secondary</p>
               <p class="text-sm text-base-content/60">#0C3558</p>
@@ -29,7 +29,7 @@
             </div>
           </div>
           <div class="space-y-2">
-            <div class="h-24 rounded-lg shadow-lg" style="background-color: #E94B35;"></div>
+            <div class="w-24 h-24 rounded-full shadow-lg mx-auto" style="background-color: #E94B35;"></div>
             <div class="text-center">
               <p class="font-semibold">Accent</p>
               <p class="text-sm text-base-content/60">#E94B35</p>
@@ -37,7 +37,7 @@
             </div>
           </div>
           <div class="space-y-2">
-            <div class="h-24 rounded-lg shadow-lg" style="background-color: #3D4451;"></div>
+            <div class="w-24 h-24 rounded-full shadow-lg mx-auto" style="background-color: #3D4451;"></div>
             <div class="text-center">
               <p class="font-semibold">Neutral</p>
               <p class="text-sm text-base-content/60">#3D4451</p>
@@ -56,7 +56,7 @@
       <template #preview>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div class="space-y-2">
-            <div class="h-24 bg-success rounded-lg shadow-lg"></div>
+            <div class="w-24 h-24 bg-success rounded-full shadow-lg mx-auto"></div>
             <div class="text-center">
               <p class="font-semibold">Success</p>
               <p class="text-sm text-base-content/60">#36D399</p>
@@ -64,7 +64,7 @@
             </div>
           </div>
           <div class="space-y-2">
-            <div class="h-24 bg-warning rounded-lg shadow-lg"></div>
+            <div class="w-24 h-24 bg-warning rounded-full shadow-lg mx-auto"></div>
             <div class="text-center">
               <p class="font-semibold">Warning</p>
               <p class="text-sm text-base-content/60">#FBBD23</p>
@@ -72,7 +72,7 @@
             </div>
           </div>
           <div class="space-y-2">
-            <div class="h-24 bg-error rounded-lg shadow-lg"></div>
+            <div class="w-24 h-24 bg-error rounded-full shadow-lg mx-auto"></div>
             <div class="text-center">
               <p class="font-semibold">Error</p>
               <p class="text-sm text-base-content/60">#F87272</p>
@@ -80,7 +80,7 @@
             </div>
           </div>
           <div class="space-y-2">
-            <div class="h-24 bg-info rounded-lg shadow-lg"></div>
+            <div class="w-24 h-24 bg-info rounded-full shadow-lg mx-auto"></div>
             <div class="text-center">
               <p class="font-semibold">Info</p>
               <p class="text-sm text-base-content/60">#3ABFF8</p>
@@ -99,7 +99,7 @@
       <template #preview>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div class="space-y-2">
-            <div class="h-24 bg-base-100 rounded-lg shadow-lg border border-base-300"></div>
+            <div class="w-24 h-24 bg-base-100 rounded-full shadow-lg border border-base-300 mx-auto"></div>
             <div class="text-center">
               <p class="font-semibold">Base 100</p>
               <p class="text-sm text-base-content/60">#FFFFFF</p>
@@ -107,7 +107,7 @@
             </div>
           </div>
           <div class="space-y-2">
-            <div class="h-24 bg-base-200 rounded-lg shadow-lg"></div>
+            <div class="w-24 h-24 bg-base-200 rounded-full shadow-lg mx-auto"></div>
             <div class="text-center">
               <p class="font-semibold">Base 200</p>
               <p class="text-sm text-base-content/60">#F2F2F2</p>
@@ -115,7 +115,7 @@
             </div>
           </div>
           <div class="space-y-2">
-            <div class="h-24 bg-base-300 rounded-lg shadow-lg"></div>
+            <div class="w-24 h-24 bg-base-300 rounded-full shadow-lg mx-auto"></div>
             <div class="text-center">
               <p class="font-semibold">Base 300</p>
               <p class="text-sm text-base-content/60">#E5E5E5</p>

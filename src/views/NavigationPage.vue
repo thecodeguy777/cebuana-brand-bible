@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-6xl">
+  <div class="w-full">
     <h1 class="heading-2 mb-4">Navigation</h1>
     <p class="body-large text-base-content/70 mb-12">
       Navigation patterns and components from Cebuana Lhuillier's website. Consistent navigation ensures users can easily find services and information across all platforms.
@@ -16,9 +16,9 @@
         <div class="w-full rounded-lg overflow-hidden shadow-lg">
           <div class="flex items-center justify-between px-6 py-3" style="background-color: #0C3558; color: #FFFFFF;">
             <div class="flex gap-6">
-              <a href="#" class="text-sm hover:underline transition-all">About Us</a>
-              <a href="#" class="text-sm hover:underline transition-all">Contact Us</a>
-              <a href="#" class="text-sm hover:underline transition-all">Follow Us</a>
+              <a href="#" class="text-xs hover:underline transition-all">About Us</a>
+              <a href="#" class="text-xs hover:underline transition-all">Contact Us</a>
+              <a href="#" class="text-xs hover:underline transition-all">Follow Us</a>
             </div>
             <div class="flex gap-4">
               <a href="#" class="hover:opacity-75 transition-opacity">
@@ -55,16 +55,16 @@
                 <span class="text-white font-bold text-xl">C</span>
               </div>
               <div>
-                <div class="font-bold text-lg" style="color: #003366;">CEBUANA <span style="color: #E94B35;">LHUILLIER</span></div>
+                <div class="font-bold text-lg" style="color: #003366;">LOGO <span style="color: #E94B35;">HERE</span></div>
               </div>
             </div>
 
             <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex items-center gap-6">
+            <nav class="hidden lg:flex items-center gap-4">
               <div class="dropdown dropdown-hover">
-                <div tabindex="0" role="button" class="flex items-center gap-1 text-sm font-medium hover:opacity-70 transition-opacity" style="color: #3D4451;">
+                <div tabindex="0" role="button" class="flex items-center gap-1 text-xs font-medium hover:opacity-70 transition-opacity" style="color: #3D4451;">
                   Services
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                 </div>
                 <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                   <li><a>Pawning</a></li>
@@ -73,30 +73,30 @@
                   <li><a>Microinsurance</a></li>
                 </ul>
               </div>
-              <a href="#" class="text-sm font-medium hover:opacity-70 transition-opacity" style="color: #3D4451;">Promos</a>
+              <a href="#" class="text-xs font-medium hover:opacity-70 transition-opacity" style="color: #3D4451;">Promos</a>
               <div class="dropdown dropdown-hover">
-                <div tabindex="0" role="button" class="flex items-center gap-1 text-sm font-medium hover:opacity-70 transition-opacity" style="color: #3D4451;">
+                <div tabindex="0" role="button" class="flex items-center gap-1 text-xs font-medium hover:opacity-70 transition-opacity" style="color: #3D4451;">
                   Mobile App
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                 </div>
               </div>
-              <a href="#" class="text-sm font-medium hover:opacity-70 transition-opacity" style="color: #3D4451;">About Us</a>
+              <a href="#" class="text-xs font-medium hover:opacity-70 transition-opacity" style="color: #3D4451;">About Us</a>
               <div class="dropdown dropdown-hover">
-                <div tabindex="0" role="button" class="flex items-center gap-1 text-sm font-medium hover:opacity-70 transition-opacity" style="color: #3D4451;">
+                <div tabindex="0" role="button" class="flex items-center gap-1 text-xs font-medium hover:opacity-70 transition-opacity" style="color: #3D4451;">
                   News and Events
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                 </div>
               </div>
               <div class="dropdown dropdown-hover">
-                <div tabindex="0" role="button" class="flex items-center gap-1 text-sm font-medium hover:opacity-70 transition-opacity" style="color: #3D4451;">
+                <div tabindex="0" role="button" class="flex items-center gap-1 text-xs font-medium hover:opacity-70 transition-opacity" style="color: #3D4451;">
                   Support
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                 </div>
               </div>
             </nav>
 
             <!-- CTA Button -->
-            <button class="btn btn-sm lg:btn-md rounded-full text-white border-0 hover:opacity-90 transition-opacity" style="background-color: #E94B35;">
+            <button class="btn btn-xs rounded-full text-white border-0 hover:opacity-90 transition-opacity text-xs" style="background-color: #E94B35;">
               Find a Branch
             </button>
           </div>
