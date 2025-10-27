@@ -48,7 +48,7 @@
         </div>
 
         <!-- Navigation Menu -->
-        <ul class="menu p-4 space-y-1">
+        <ul class="menu w-full px-4 py-2 space-y-1">
           <li>
             <router-link to="/home" class="gap-4" active-class="active">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -190,6 +190,17 @@ const openSearch = inject('openSearch', () => {
 
 <style scoped>
 /* Active link styling handled by DaisyUI's active class */
+
+/* Menu Items - Full Width */
+.menu :deep(li) {
+  width: 100%;
+}
+
+.menu :deep(a) {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
 
 /* Search Trigger Button */
 .search-trigger {
