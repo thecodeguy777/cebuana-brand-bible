@@ -1,5 +1,6 @@
 <script setup>
 import SideNav from './components/layout/SideNav.vue'
+import ScrollToTop from './components/layout/ScrollToTop.vue'
 </script>
 
 <template>
@@ -7,6 +8,7 @@ import SideNav from './components/layout/SideNav.vue'
     <SideNav>
       <router-view />
     </SideNav>
+    <ScrollToTop />
   </div>
 </template>
 
