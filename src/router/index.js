@@ -71,6 +71,11 @@ const routes = [
     path: '/backoffice',
     name: 'BackOffice',
     component: () => import('../views/BackOfficePage.vue')
+  },
+  {
+    path: '/banking-landing',
+    name: 'BankingLanding',
+    component: () => import('../views/BankingLandingPage.vue')
   }
 ]
 
