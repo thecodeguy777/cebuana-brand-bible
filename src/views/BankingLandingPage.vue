@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-white via-base-100 to-base-200">
+  <div class="min-h-screen bg-gradient-to-b from-white via-base-100 to-base-200 overflow-x-hidden">
     <!-- Floating Navigation -->
     <nav
       class="fixed left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl transition-all duration-300"
@@ -17,7 +17,7 @@
             class="absolute top-0 left-0 h-full backdrop-blur-xl sm:hidden"
             style="
               background-color: rgba(12, 53, 88, 0.95);
-              width: 40%;
+              width: 45%;
               clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
             "
           ></div>
@@ -61,18 +61,8 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center px-4 sm:px-6 relative overflow-hidden sm:pt-32 md:pt-40 sm:pb-16 md:pb-20">
-      <!-- Floating Character - Mobile Bottom -->
-      <div class="xl:hidden absolute left-1/2 -translate-x-1/2 w-[450px] h-[450px] pointer-events-none z-0" style="bottom: -45%">
-        <img
-          src="/mascot.png"
-          alt="Cebuana Mascot"
-          class="w-full h-full object-contain"
-          style="filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));"
-        />
-      </div>
-
-      <!-- Floating Character - Desktop Right Side -->
+    <section class="min-h-[100dvh] flex items-center justify-center px-4 sm:px-6 relative overflow-hidden py-20 sm:py-32 md:py-40">
+      <!-- Floating Character - Desktop Right Side Only -->
       <div class="hidden xl:block absolute right-0 top-40 w-[500px] h-[500px] pointer-events-none">
         <img
           src="/mascot.png"
@@ -354,6 +344,27 @@ const handleScroll = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+
+  // Intersection Observer for scroll animations on mobile
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('card-visible')
+      }
+    })
+  }, observerOptions)
+
+  // Observe all card elements
+  const cards = document.querySelectorAll('.card-hover')
+  cards.forEach(card => {
+    card.classList.add('card-animate')
+    observer.observe(card)
+  })
 })
 
 onUnmounted(() => {
@@ -365,6 +376,26 @@ onUnmounted(() => {
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+}
+
+/* Scroll animation for cards on mobile */
+.card-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.card-animate.card-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Disable initial animation on larger screens (desktop keeps hover) */
+@media (min-width: 1024px) {
+  .card-animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Logo color filter - converts white to primary blue while preserving red accent */
