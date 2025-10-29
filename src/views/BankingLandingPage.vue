@@ -249,7 +249,7 @@
         <p class="text-base sm:text-lg text-base-content/60 mb-6 sm:mb-8 px-2">
           Join thousands of satisfied customers who trust Cebuana Lhuillier Bank
         </p>
-        <button class="btn btn-primary btn-sm sm:btn-md lg:btn-lg rounded-full px-6 sm:px-8 lg:px-10 gap-2 w-full sm:w-auto mx-4 sm:mx-0">
+        <button class="btn btn-primary btn-sm sm:btn-md lg:btn-lg rounded-full px-6 sm:px-8 lg:px-10 gap-2 w-full sm:w-auto max-w-md mx-auto sm:mx-0">
           <span class="text-xs sm:text-sm lg:text-base">Open Your Account Today</span>
           <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
