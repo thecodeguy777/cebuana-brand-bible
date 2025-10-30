@@ -183,7 +183,7 @@
           <!-- Left Content -->
           <div>
             <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-2">
-              <span style="color: #003366;">Banking that adapts to your lifestyle</span>
+              <span style="color: #003366;">Banking that adapts to your business</span>
             </h2>
             <p class="text-base sm:text-lg text-base-content/60 mb-6 sm:mb-8 leading-relaxed px-2">
               Whether you're managing daily expenses, planning for the future, or growing your business,
