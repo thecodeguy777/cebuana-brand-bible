@@ -35,13 +35,13 @@
         <!-- Content -->
         <div class="relative flex items-center justify-between px-3 sm:px-6 lg:px-8 py-2.5 sm:py-4">
           <!-- Logo -->
-          <a href="#" class="flex flex-col items-center">
+          <a href="#" class="flex flex-col items-end">
             <img
               src="/lhuillier-logo.png"
               alt="Lhuillier"
               class="h-7 sm:h-9 w-auto object-contain"
             />
-            <span class="font-serif text-xs sm:text-sm text-white -mt-2">Partner Portal</span>
+            <span class="font-serif text-xs sm:text-sm text-white -mt-1 mr-1">Partner Portal</span>
           </a>
 
           <!-- Navigation Links - Desktop -->

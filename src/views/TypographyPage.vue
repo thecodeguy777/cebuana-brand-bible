@@ -2,30 +2,37 @@
   <div class="max-w-6xl">
     <h1 class="heading-2 mb-4">Typography</h1>
     <p class="body-large text-base-content/70 mb-12">
-      Consistent font styles, sizes, and hierarchy for readability and brand alignment using Satoshi font family.
+      Elegant and professional typography pairing using Garamond for headings and Helvetica Neue for body text.
     </p>
 
     <!-- Font Family -->
     <ComponentPreview
       title="Font Family"
-      description="The Satoshi font family is used throughout the application for its excellent readability and modern appearance."
-      :code="`<div style=&quot;font-family: Satoshi, system-ui, sans-serif&quot;>
-  Sample Text in Satoshi Font
-</div>`"
+      description="Garamond provides elegant, classic styling for headings while Helvetica Neue offers modern readability for body text."
+      :code="`<!-- Serif (Headings) -->
+<h1 class=&quot;font-serif&quot;>Heading in Garamond</h1>
+
+<!-- Sans-serif (Body) -->
+<p class=&quot;font-sans&quot;>Body text in Helvetica Neue</p>`"
     >
       <template #preview>
         <div class="space-y-4">
           <div class="p-6 bg-base-100 rounded-lg">
-            <p class="text-4xl font-bold mb-2">Satoshi</p>
-            <p class="text-base-content/60">Primary typeface for all UI elements</p>
+            <p class="text-4xl font-bold font-serif mb-2">Garamond Pro</p>
+            <p class="text-base-content/60">Serif typeface for headings and emphasis</p>
+          </div>
+          <div class="p-6 bg-base-100 rounded-lg">
+            <p class="text-4xl font-bold font-sans mb-2">Helvetica Neue</p>
+            <p class="text-base-content/60">Sans-serif typeface for body text and UI elements</p>
           </div>
         </div>
       </template>
       <template #specs>
         <ul class="text-sm space-y-1">
-          <li><strong>Font Family:</strong> Satoshi, system-ui, sans-serif</li>
-          <li><strong>Weights:</strong> 300 (Light), 400 (Regular), 500 (Medium), 700 (Bold), 900 (Black)</li>
-          <li><strong>Source:</strong> Fontshare API</li>
+          <li><strong>Serif Family:</strong> Garamond, Georgia, serif</li>
+          <li><strong>Sans-serif Family:</strong> Helvetica Neue, Helvetica, Arial, sans-serif</li>
+          <li><strong>Usage:</strong> Serif for headings (h1-h6), Sans-serif for body text, buttons, and UI</li>
+          <li><strong>Weights:</strong> 400 (Regular), 600 (Semibold), 700 (Bold)</li>
         </ul>
       </template>
     </ComponentPreview>
@@ -33,39 +40,39 @@
     <!-- Heading Styles -->
     <ComponentPreview
       title="Headings"
-      description="Hierarchical heading styles from H1 to H6 with consistent sizing and weight."
-      :code="`<h1 class=&quot;heading-1&quot;>Heading 1 - 65px</h1>
-<h2 class=&quot;heading-2&quot;>Heading 2 - 50px</h2>
-<h3 class=&quot;heading-3&quot;>Heading 3 - 45px</h3>
-<h4 class=&quot;heading-4&quot;>Heading 4 - 32px</h4>
-<h5 class=&quot;heading-5&quot;>Heading 5 - 24px</h5>
-<h6 class=&quot;heading-6&quot;>Heading 6 - 20px</h6>`"
+      description="Hierarchical heading styles from H1 to H6 using Garamond serif font with consistent sizing and weight."
+      :code="`<h1 class=&quot;heading-1 font-serif&quot;>Heading 1 - 65px</h1>
+<h2 class=&quot;heading-2 font-serif&quot;>Heading 2 - 50px</h2>
+<h3 class=&quot;heading-3 font-serif&quot;>Heading 3 - 45px</h3>
+<h4 class=&quot;heading-4 font-serif&quot;>Heading 4 - 32px</h4>
+<h5 class=&quot;heading-5 font-serif&quot;>Heading 5 - 24px</h5>
+<h6 class=&quot;heading-6 font-serif&quot;>Heading 6 - 20px</h6>`"
     >
       <template #preview>
         <div class="space-y-6">
           <div class="border-l-4 border-primary pl-4">
-            <h1 class="heading-1">Heading 1</h1>
-            <p class="text-sm text-base-content/50 mt-2">65px / Bold / Line height 1.1</p>
+            <h1 class="heading-1 font-serif">Heading 1</h1>
+            <p class="text-sm text-base-content/50 mt-2">65px / Garamond / Bold / Line height 1.1</p>
           </div>
           <div class="border-l-4 border-primary pl-4">
-            <h2 class="heading-2">Heading 2</h2>
-            <p class="text-sm text-base-content/50 mt-2">50px / Bold / Line height 1.2</p>
+            <h2 class="heading-2 font-serif">Heading 2</h2>
+            <p class="text-sm text-base-content/50 mt-2">50px / Garamond / Bold / Line height 1.2</p>
           </div>
           <div class="border-l-4 border-primary pl-4">
-            <h3 class="heading-3">Heading 3</h3>
-            <p class="text-sm text-base-content/50 mt-2">45px / Semibold / Line height 1.2</p>
+            <h3 class="heading-3 font-serif">Heading 3</h3>
+            <p class="text-sm text-base-content/50 mt-2">45px / Garamond / Semibold / Line height 1.2</p>
           </div>
           <div class="border-l-4 border-secondary pl-4">
-            <h4 class="heading-4">Heading 4</h4>
-            <p class="text-sm text-base-content/50 mt-2">32px / Semibold / Line height 1.3</p>
+            <h4 class="heading-4 font-serif">Heading 4</h4>
+            <p class="text-sm text-base-content/50 mt-2">32px / Garamond / Semibold / Line height 1.3</p>
           </div>
           <div class="border-l-4 border-secondary pl-4">
-            <h5 class="heading-5">Heading 5</h5>
-            <p class="text-sm text-base-content/50 mt-2">24px / Semibold / Line height 1.4</p>
+            <h5 class="heading-5 font-serif">Heading 5</h5>
+            <p class="text-sm text-base-content/50 mt-2">24px / Garamond / Semibold / Line height 1.4</p>
           </div>
           <div class="border-l-4 border-secondary pl-4">
-            <h6 class="heading-6">Heading 6</h6>
-            <p class="text-sm text-base-content/50 mt-2">20px / Semibold / Line height 1.4</p>
+            <h6 class="heading-6 font-serif">Heading 6</h6>
+            <p class="text-sm text-base-content/50 mt-2">20px / Garamond / Semibold / Line height 1.4</p>
           </div>
         </div>
       </template>
@@ -133,7 +140,7 @@
     <!-- Body Text -->
     <ComponentPreview
       title="Body Text"
-      description="Body text styles for content, labels, and captions."
+      description="Body text styles using Helvetica Neue for content, labels, and captions."
       :code="`<p class=&quot;body-large&quot;>Large body text - 16px</p>
 <p class=&quot;body-regular&quot;>Regular body text - 14px</p>
 <p class=&quot;body-small&quot;>Small body text - 12px</p>
@@ -143,19 +150,19 @@
         <div class="space-y-4">
           <div class="p-4 bg-base-100 rounded">
             <p class="body-large mb-1">Large Body Text</p>
-            <p class="text-sm text-base-content/50">16px / Regular / Line height 1.6</p>
+            <p class="text-sm text-base-content/50">16px / Helvetica Neue / Regular / Line height 1.6</p>
           </div>
           <div class="p-4 bg-base-100 rounded">
             <p class="body-regular mb-1">Regular Body Text</p>
-            <p class="text-sm text-base-content/50">14px / Regular / Line height 1.6</p>
+            <p class="text-sm text-base-content/50">14px / Helvetica Neue / Regular / Line height 1.6</p>
           </div>
           <div class="p-4 bg-base-100 rounded">
             <p class="body-small mb-1">Small Body Text</p>
-            <p class="text-sm text-base-content/50">12px / Regular / Line height 1.5</p>
+            <p class="text-sm text-base-content/50">12px / Helvetica Neue / Regular / Line height 1.5</p>
           </div>
           <div class="p-4 bg-base-100 rounded">
             <p class="caption mb-1">Caption Text</p>
-            <p class="text-sm text-base-content/50">10px / Regular / Line height 1.4</p>
+            <p class="text-sm text-base-content/50">10px / Helvetica Neue / Regular / Line height 1.4</p>
           </div>
         </div>
       </template>
