@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-white via-base-100 to-base-200 overflow-x-hidden">
+  <div class="min-h-screen bg-gradient-to-b from-white via-base-100 to-base-200 overflow-x-hidden font-lato">
     <!-- Floating Navigation -->
     <nav
       class="fixed left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl transition-all duration-300"
@@ -373,6 +373,16 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+/* Import Lato font for body text */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+/* Import EB Garamond for headings */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&display=swap');
+
+/* Apply Garamond to all headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'EB Garamond', serif;
+}
+
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
