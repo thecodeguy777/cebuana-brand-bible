@@ -75,10 +75,10 @@
 
       <div class="max-w-6xl mx-auto text-center relative z-10">
         <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 leading-tight px-2">
-          <span class="block" style="color: #003366;">Corporate Banking</span>
+          <span class="block whitespace-nowrap" style="color: #003366;">Corporate Banking</span>
           <span class="block">
             <span style="color: #003366;">Made </span>
-            <span class="text-transparent bg-clip-text text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" style="background-image: linear-gradient(to right, #003366, #E94B35, #003366);">
+            <span class="text-transparent bg-clip-text text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" style="background-image: linear-gradient(to right, #003366, #E94B35, #003366);">
               Easy
             </span>
           </span>
