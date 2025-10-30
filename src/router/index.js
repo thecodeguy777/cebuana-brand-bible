@@ -76,6 +76,16 @@ const routes = [
     path: '/banking-landing',
     name: 'BankingLanding',
     component: () => import('../views/BankingLandingPage.vue')
+  },
+  {
+    path: '/scroll-demo',
+    name: 'ScrollDemo',
+    component: () => import('../views/ScrollAnimationDemo.vue')
+  },
+  {
+    path: '/advanced-scroll',
+    name: 'AdvancedScroll',
+    component: () => import('../views/AdvancedScrollDemo.vue')
   }
 ]
 

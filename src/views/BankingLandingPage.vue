@@ -1,5 +1,17 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-white via-base-100 to-base-200 overflow-x-hidden">
+  <!-- Loading Screen -->
+  <div v-if="isLoading" class="fixed inset-0 z-[9999] bg-gradient-to-br from-[#003366] via-[#004080] to-[#E94B35] flex flex-col items-center justify-center">
+    <img
+      src="/lhuillier-logo.png"
+      alt="Lhuillier"
+      class="h-16 sm:h-20 w-auto object-contain mb-8"
+    />
+    <div class="w-64 h-1 bg-white/20 rounded-full overflow-hidden">
+      <div class="h-full bg-white rounded-full loading-bar"></div>
+    </div>
+  </div>
+
+  <div v-show="!isLoading" class="min-h-screen bg-gradient-to-b from-white via-base-100 to-base-200 overflow-x-hidden">
     <!-- Floating Navigation -->
     <nav
       class="fixed left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl transition-all duration-300"
@@ -340,13 +352,79 @@ import { ref, onMounted, onUnmounted } from 'vue'
 // Inspired by Spline.design's minimalist aesthetic with floating navigation
 
 const isScrolled = ref(false)
+const isLoading = ref(true)
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50
 }
 
 onMounted(() => {
+  // Preload images
+  const imagesToPreload = [
+    '/lhuillier-logo.png',
+    '/mascot.png',
+    '/img1.jpg',
+    '/img2.jpg',
+    '/img3.jpg',
+    '/img4.jpg'
+  ]
+
+  let loadedCount = 0
+  const totalImages = imagesToPreload.length
+
+  imagesToPreload.forEach(src => {
+    const img = new Image()
+    img.onload = () => {
+      loadedCount++
+      if (loadedCount === totalImages) {
+        // All images loaded, hide loading screen after a short delay
+        setTimeout(() => {
+          isLoading.value = false
+        }, 500)
+      }
+    }
+    img.onerror = () => {
+      loadedCount++
+      if (loadedCount === totalImages) {
+        setTimeout(() => {
+          isLoading.value = false
+        }, 500)
+      }
+    }
+    img.src = src
+  })
+
   window.addEventListener('scroll', handleScroll)
+
+  // Smooth scroll for navigation links - use setTimeout to ensure DOM is ready
+  setTimeout(() => {
+    const navLinks = document.querySelectorAll('a[href^="#"]')
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('href')
+
+        // Skip empty hash or just '#'
+        if (!targetId || targetId === '#') {
+          return
+        }
+
+        e.preventDefault()
+        const targetElement = document.querySelector(targetId)
+
+        if (targetElement) {
+          // Get the element's position
+          const elementPosition = targetElement.getBoundingClientRect().top
+          const offsetPosition = elementPosition + window.pageYOffset - 70
+
+          // Scroll to the position with offset
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          })
+        }
+      })
+    })
+  }, 100)
 
   // Intersection Observer for scroll animations on mobile
   const observerOptions = {
@@ -379,26 +457,19 @@ onUnmounted(() => {
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 150px; /* Adjust for fixed navigation height */
 }
 
 /* Scroll animation for cards on mobile */
 .card-animate {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .card-animate.card-visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Disable initial animation on larger screens (desktop keeps hover) */
-@media (min-width: 1024px) {
-  .card-animate {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Logo color filter - converts white to primary blue while preserving red accent */
@@ -409,6 +480,24 @@ html {
 /* Alternative: If you want to maintain the original colors but make it visible */
 .logo-visible {
   filter: drop-shadow(0 0 2px rgba(0, 51, 102, 0.3));
+}
+
+/* Loading bar animation */
+@keyframes loadingBar {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(400%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.loading-bar {
+  width: 25%;
+  animation: loadingBar 1.5s ease-in-out infinite;
 }
 
 /* Floating animation for mascot */
