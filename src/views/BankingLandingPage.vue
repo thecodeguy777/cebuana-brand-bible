@@ -35,12 +35,13 @@
         <!-- Content -->
         <div class="relative flex items-center justify-between px-3 sm:px-6 lg:px-8 py-2.5 sm:py-4">
           <!-- Logo -->
-          <a href="#" class="flex items-center gap-2 sm:gap-3">
+          <a href="#" class="flex flex-col items-center">
             <img
               src="/lhuillier-logo.png"
               alt="Lhuillier"
               class="h-7 sm:h-9 w-auto object-contain"
             />
+            <span class="font-serif text-xs sm:text-sm text-white -mt-2">Partner Portal</span>
           </a>
 
           <!-- Navigation Links - Desktop -->
@@ -73,15 +74,17 @@
       </div>
 
       <div class="max-w-6xl mx-auto text-center relative z-10">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 leading-tight px-2">
-          <span class="block sm:inline" style="color: #003366;">Banking Made</span>
-          <span class="block sm:inline text-transparent bg-clip-text text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" style="background-image: linear-gradient(to right, #003366, #E94B35, #003366);">
-            Simple
+        <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 leading-tight px-2">
+          <span class="block" style="color: #003366;">Corporate Banking</span>
+          <span class="block">
+            <span style="color: #003366;">Made </span>
+            <span class="text-transparent bg-clip-text text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" style="background-image: linear-gradient(to right, #003366, #E94B35, #003366);">
+              Easy
+            </span>
           </span>
         </h1>
         <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-base-content/60 mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed px-2">
-          Experience secure, fast, and reliable digital banking with Cebuana Lhuillier.
-          Your financial future starts here.
+          Experience secure, fast, and reliable digital banking with <span class="whitespace-nowrap">Cebuana Lhuillier</span>. Your business's financial future starts here.
         </p>
         <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
           <button class="btn btn-primary btn-sm sm:btn-md lg:btn-lg rounded-full px-6 sm:px-8 gap-2 w-full sm:w-auto">
@@ -123,7 +126,7 @@
     <section id="features" class="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-8 sm:mb-12 md:mb-16">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-2">
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-2">
             <span style="color: #E94B35;">Everything</span> <span style="color: #003366;">you need</span>
           </h2>
           <p class="text-base sm:text-lg text-base-content/60 px-2">Powerful features for modern banking</p>
@@ -135,8 +138,8 @@
             <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110" style="background-image: url('/img1.jpg');"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent transition-all duration-500 group-hover:from-black/90 group-hover:via-black/60"></div>
             <div class="relative h-full flex flex-col justify-end text-white">
-              <h3 class="text-lg sm:text-xl font-semibold mb-1.5 sm:mb-2">Instant Transfers</h3>
-              <p class="text-white/90 text-xs sm:text-sm leading-relaxed">Send money instantly to any bank account.</p>
+              <h3 class="font-serif text-lg sm:text-xl font-semibold mb-1.5 sm:mb-2">Lorem Ipsum</h3>
+              <p class="text-white/90 text-xs sm:text-sm leading-relaxed">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
             </div>
           </div>
 
@@ -145,8 +148,8 @@
             <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110" style="background-image: url('/img2.jpg');"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent transition-all duration-500 group-hover:from-black/90 group-hover:via-black/60"></div>
             <div class="relative h-full flex flex-col justify-end text-white">
-              <h3 class="text-lg sm:text-xl font-semibold mb-1.5 sm:mb-2">Bills Payment</h3>
-              <p class="text-white/90 text-xs sm:text-sm leading-relaxed">Pay all your bills in one place. Never miss a due date again.</p>
+              <h3 class="font-serif text-lg sm:text-xl font-semibold mb-1.5 sm:mb-2">Dolor Sit</h3>
+              <p class="text-white/90 text-xs sm:text-sm leading-relaxed">Sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
             </div>
           </div>
 
@@ -155,8 +158,8 @@
             <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110" style="background-image: url('/img3.jpg');"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent transition-all duration-500 group-hover:from-black/90 group-hover:via-black/60"></div>
             <div class="relative h-full flex flex-col justify-end text-white">
-              <h3 class="text-lg sm:text-xl font-semibold mb-1.5 sm:mb-2">Micro Investments</h3>
-              <p class="text-white/90 text-xs sm:text-sm leading-relaxed">Grow your wealth with our curated investment opportunities.</p>
+              <h3 class="font-serif text-lg sm:text-xl font-semibold mb-1.5 sm:mb-2">Consectetur</h3>
+              <p class="text-white/90 text-xs sm:text-sm leading-relaxed">Ut enim ad minim veniam quis nostrud exercitation ullamco.</p>
             </div>
           </div>
 
@@ -165,8 +168,8 @@
             <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110" style="background-image: url('/img4.jpg');"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent transition-all duration-500 group-hover:from-black/90 group-hover:via-black/60"></div>
             <div class="relative h-full flex flex-col justify-end text-white">
-              <h3 class="text-lg sm:text-xl font-semibold mb-1.5 sm:mb-2">Micro Loans</h3>
-              <p class="text-white/90 text-xs sm:text-sm leading-relaxed">Quick loan approval with competitive rates tailored for you.</p>
+              <h3 class="font-serif text-lg sm:text-xl font-semibold mb-1.5 sm:mb-2">Adipiscing</h3>
+              <p class="text-white/90 text-xs sm:text-sm leading-relaxed">Duis aute irure dolor in reprehenderit in voluptate velit.</p>
             </div>
           </div>
         </div>
@@ -179,7 +182,7 @@
         <div class="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
           <!-- Left Content -->
           <div>
-            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-2">
+            <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-2">
               <span style="color: #003366;">Banking that adapts to your lifestyle</span>
             </h2>
             <p class="text-base sm:text-lg text-base-content/60 mb-6 sm:mb-8 leading-relaxed px-2">
@@ -192,7 +195,7 @@
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                 </svg>
                 <div>
-                  <h4 class="font-semibold mb-0.5 sm:mb-1 text-sm sm:text-base">Real-time Notifications</h4>
+                  <h4 class="font-serif font-semibold mb-0.5 sm:mb-1 text-sm sm:text-base">Real-time Notifications</h4>
                   <p class="text-xs sm:text-sm text-base-content/60">Stay informed with instant alerts for every transaction</p>
                 </div>
               </li>
@@ -201,7 +204,7 @@
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                 </svg>
                 <div>
-                  <h4 class="font-semibold mb-0.5 sm:mb-1 text-sm sm:text-base">Budget Tracking</h4>
+                  <h4 class="font-serif font-semibold mb-0.5 sm:mb-1 text-sm sm:text-base">Budget Tracking</h4>
                   <p class="text-xs sm:text-sm text-base-content/60">Visualize your spending with smart analytics</p>
                 </div>
               </li>
@@ -210,7 +213,7 @@
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                 </svg>
                 <div>
-                  <h4 class="font-semibold mb-0.5 sm:mb-1 text-sm sm:text-base">24/7 Support</h4>
+                  <h4 class="font-serif font-semibold mb-0.5 sm:mb-1 text-sm sm:text-base">24/7 Support</h4>
                   <p class="text-xs sm:text-sm text-base-content/60">Get help anytime, anywhere from our dedicated team</p>
                 </div>
               </li>
@@ -243,7 +246,7 @@
     <!-- CTA Section -->
     <section class="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-2">
+        <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-2">
           Ready to get started?
         </h2>
         <p class="text-base sm:text-lg text-base-content/60 mb-6 sm:mb-8 px-2">
@@ -263,7 +266,7 @@
       <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
           <div>
-            <h4 class="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Products</h4>
+            <h4 class="font-serif font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Products</h4>
             <ul class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm opacity-80">
               <li><a href="#" class="hover:opacity-100 transition-opacity">Savings Account</a></li>
               <li><a href="#" class="hover:opacity-100 transition-opacity">Current Account</a></li>
@@ -272,7 +275,7 @@
             </ul>
           </div>
           <div>
-            <h4 class="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Company</h4>
+            <h4 class="font-serif font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Company</h4>
             <ul class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm opacity-80">
               <li><a href="#" class="hover:opacity-100 transition-opacity">About Us</a></li>
               <li><a href="#" class="hover:opacity-100 transition-opacity">Careers</a></li>
@@ -281,7 +284,7 @@
             </ul>
           </div>
           <div>
-            <h4 class="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Support</h4>
+            <h4 class="font-serif font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Support</h4>
             <ul class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm opacity-80">
               <li><a href="#" class="hover:opacity-100 transition-opacity">Help Center</a></li>
               <li><a href="#" class="hover:opacity-100 transition-opacity">Contact Us</a></li>
@@ -290,7 +293,7 @@
             </ul>
           </div>
           <div>
-            <h4 class="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Legal</h4>
+            <h4 class="font-serif font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Legal</h4>
             <ul class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm opacity-80">
               <li><a href="#" class="hover:opacity-100 transition-opacity">Privacy Policy</a></li>
               <li><a href="#" class="hover:opacity-100 transition-opacity">Terms of Service</a></li>

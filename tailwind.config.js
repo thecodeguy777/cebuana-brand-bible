@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Satoshi', 'system-ui', 'sans-serif'],
+        'sans': ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        'serif': ['Garamond', 'Georgia', 'serif'],
       },
       fontSize: {
         'display': '65px',
