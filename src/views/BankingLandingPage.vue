@@ -17,7 +17,7 @@
             class="absolute top-0 left-0 h-full backdrop-blur-xl sm:hidden"
             style="
               background-color: rgba(12, 53, 88, 0.95);
-              width: 45%;
+              width: 50%;
               clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
             "
           ></div>
@@ -26,20 +26,20 @@
             class="absolute top-0 left-0 h-full backdrop-blur-xl hidden sm:block"
             style="
               background-color: rgba(12, 53, 88, 0.95);
-              width: 20%;
+              width: 24%;
               clip-path: polygon(0 0, 100% 0, calc(100% - 30px) 100%, 0 100%);
             "
           ></div>
         </div>
 
         <!-- Content -->
-        <div class="relative flex items-center justify-between px-3 sm:px-6 lg:px-8 py-2.5 sm:py-4">
+        <div class="relative flex items-center justify-between px-3 sm:px-6 lg:px-8 py-1.5 sm:py-2">
           <!-- Logo -->
           <a href="#" class="flex flex-col items-end">
             <img
               src="/lhuillier-logo.png"
               alt="Lhuillier"
-              class="h-7 sm:h-9 w-auto object-contain"
+              class="h-9 sm:h-12 w-auto object-contain"
             />
             <span class="font-serif text-xs sm:text-sm text-white -mt-1 mr-1">Partner Portal</span>
           </a>
@@ -78,7 +78,7 @@
           <span class="block whitespace-nowrap" style="color: #003366;">Corporate Banking</span>
           <span class="block">
             <span style="color: #003366;">Made </span>
-            <span class="text-transparent bg-clip-text text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" style="background-image: linear-gradient(to right, #003366, #E94B35, #003366);">
+            <span class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" style="color: #E94B35;">
               Easy
             </span>
           </span>
