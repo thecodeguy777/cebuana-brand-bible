@@ -17,7 +17,7 @@
             class="absolute top-0 left-0 h-full backdrop-blur-xl sm:hidden"
             style="
               background-color: rgba(12, 53, 88, 0.95);
-              width: 50%;
+              width: 60%;
               clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
             "
           ></div>
